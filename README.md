@@ -19,6 +19,6 @@ Un envahisseur de l'espace (*space invader*) est parachuté dans l'espace.
 - *pll_Clock* : signal d’horloge à 25,2 MHz (pour le format 640x480@60Hz).
 - *vga_sync* : signaux de synchronisation horizontale et verticale.
 - *rom1* : mémoire ROM (m9k) où est préchargée l’image du sprite (voir dossier *fichier mif*).
-- *sprite_generator* : calculs de déplacement du sprite et génération des signaux RGB.
+- *sprite_generator* : calculs de déplacement du sprite, gestion de l'animation et génération des signaux RGB.
 
 Le fichier *Quartus Archive*  du projet (*VGA-dvp-animatedSprite.qar*) peut être importé dans Quartus Prime (édition 20.1.1 *lite*).
