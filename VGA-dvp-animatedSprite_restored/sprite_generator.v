@@ -1,9 +1,9 @@
 module sprite_generator
 	#(		
-		parameter sprite_width = 36, 		// largeur du sprite en pixels
+		parameter sprite_width = 36, 	// largeur du sprite en pixels
 		parameter sprite_height = 54, 	// hauteur du sprite en pixels
-		parameter screen_width = 640,		// largeur de l'écran en pixels
-		parameter screen_height = 480		// hauteur de l'écran en pixels
+		parameter screen_width = 640,	// largeur de l'écran en pixels
+		parameter screen_height = 480	// hauteur de l'écran en pixels
 	)
 
 	(
@@ -24,12 +24,12 @@ module sprite_generator
 	
 	// inSprite=1 si le pixel (x, y) en cours de balayage est à l'intérieur du sprite, inSprite=0 sinon
 	assign inSprite = (x >= x_sprite) && (x < x_sprite + sprite_width)
-							&&
-							(y >= y_sprite) && (y < y_sprite + sprite_height);
+			&&
+			(y >= y_sprite) && (y < y_sprite + sprite_height);
 							
 	// calcul de l'adresse en ROM
 	assign adr_sprite = (y - y_sprite) * sprite_width + (x - x_sprite) 
-									+ ((counter_frame >= 31) ? sprite_width * sprite_height : 0); // décalage de l'adresse
+				+ ((counter_frame >= 31) ? sprite_width * sprite_height : 0); // décalage de l'adresse
 
 	
 	always @(posedge clk25 or negedge rst)
