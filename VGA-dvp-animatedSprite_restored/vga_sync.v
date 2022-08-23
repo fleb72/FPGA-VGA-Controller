@@ -4,18 +4,18 @@ module vga_sync
 		parameter vlines = 525, 	// nombre de lignes image
 		parameter hpulse = 96, 		// largeur d'impulsion du signal HSYNC
 		parameter vpulse = 2, 		// largeur d'impulsion du signal VSYNC
-		parameter hbp = 48, 			// horizontal back porch
-		parameter hfp = 16, 			// horizontal front porch
-		parameter vbp = 33, 			// vertical back porch
-		parameter vfp = 10			// vertical front porch		
+		parameter hbp = 48, 		// horizontal back porch
+		parameter hfp = 16, 		// horizontal front porch
+		parameter vbp = 33, 		// vertical back porch
+		parameter vfp = 10		// vertical front porch		
 	)
 	
 	(
-		input clk25, rst,			// signal horloge 25MHz, signal reset 
+		input clk25, rst,	// signal horloge 25MHz, signal reset 
 		output wire [9:0] x, y,	// coordonnées écran pixel en cours
-		output inDisplayArea, 	//	inDisplayArea = 1 si le pixel en cours est dans la zone d'affichage, = 0 sinon
-		output hsync, vsync,		// signaux de synchronisation horizontal et vertical
-		output frame				// impulsion en début de phase inactive
+		output inDisplayArea, 	// inDisplayArea = 1 si le pixel en cours est dans la zone d'affichage, = 0 sinon
+		output hsync, vsync,	// signaux de synchronisation horizontal et vertical
+		output frame		// impulsion en début de phase inactive
 	);
 	
 	
@@ -56,8 +56,8 @@ module vga_sync
 
 	// inDisplayArea = 1 si le pixel en cours est dans la zone d'affichage, = 0 sinon
 	assign inDisplayArea = 	(counterX < hpixels - hbp - hfp - hpulse)
-										&&
-									(counterY < vlines - vbp - vfp - vpulse);
+				&&
+				(counterY < vlines - vbp - vfp - vpulse);
 	
 	// Coordonnées écran du pixel en cours
 	// (x, y) = (0, 0) à l'origine de la zone affichable
