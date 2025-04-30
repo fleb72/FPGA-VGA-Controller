@@ -1,5 +1,7 @@
 VGA Controller on DE0-nano with Quartus Prime
 
+Voir aussi le billet de bllog : [Ce bon vieux port VGA...](https://www.techfleb.fr/posts/fpga-vga-controler/)
+
 ## Photo du montage
 ![Photo du montage](/images/photo-montage.jpg?raw=true "Photo du montage")
 Voir les détails du matériel utilisé et les branchements dans le dossier *images*.
